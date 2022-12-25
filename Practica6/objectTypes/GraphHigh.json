@@ -1,0 +1,59 @@
+{
+	"name": "GraphHigh",
+	"plugin-id": "Sprite",
+	"sid": 979413631282638,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1280,
+						"height": 720,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6917383,
+						"collisionPoly": {
+							"points": [
+								0.27578125,
+								0,
+								0.85546875,
+								0,
+								0.85546875,
+								0.4625000423855252,
+								0.8031250476837158,
+								0.5381944126553005,
+								0.7175781488418579,
+								0.6204861058129203,
+								0.6013671278953552,
+								0.6282985978656345,
+								0.5213867127895355,
+								0.582204865084754,
+								0.3985839575529099,
+								0.46749124725659685,
+								0.27578120231628417,
+								0.2111111111111112
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 213650294646168,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

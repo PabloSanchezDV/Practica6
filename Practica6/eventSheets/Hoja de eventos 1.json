@@ -1,0 +1,679 @@
+{
+	"name": "Hoja de eventos 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "puntos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 128496193249647
+		},
+		{
+			"eventType": "variable",
+			"name": "ContadorSpawn",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 644175049356644
+		},
+		{
+			"eventType": "variable",
+			"name": "spawnRatio",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 869807332711553
+		},
+		{
+			"eventType": "variable",
+			"name": "topSpawnRatio",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 476550166727711
+		},
+		{
+			"eventType": "variable",
+			"name": "spawnLow",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 906051048710775
+		},
+		{
+			"eventType": "variable",
+			"name": "health",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 343018404457676
+		},
+		{
+			"eventType": "variable",
+			"name": "sampleSpeed",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 103181960712011
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "LowSample",
+					"sid": 637214189198943,
+					"parameters": {
+						"object": "GraphLow"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 909555211045611,
+					"parameters": {
+						"variable": "puntos",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PointsText",
+					"sid": 795418508312505,
+					"parameters": {
+						"text": "\"Puntos: \" & puntos"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "LowSample",
+					"sid": 434622564395883
+				}
+			],
+			"sid": 265962940092002
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "HighSample",
+					"sid": 580073205673903,
+					"parameters": {
+						"object": "GraphHigh"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 930028926401127,
+					"parameters": {
+						"variable": "puntos",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PointsText",
+					"sid": 793583618650028,
+					"parameters": {
+						"text": "\"Puntos: \" & puntos"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "HighSample",
+					"sid": 104120386093827
+				}
+			],
+			"sid": 255385426829137
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 366042827090568,
+					"parameters": {
+						"first-value": "ContadorSpawn",
+						"comparison": 5,
+						"second-value": "spawnRatio"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 286799043999271,
+					"parameters": {
+						"variable": "spawnLow"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 145559175323903,
+					"parameters": {
+						"variable": "topSpawnRatio",
+						"value": "(random(topSpawnRatio - 1, topSpawnRatio))"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 942335414556239,
+					"parameters": {
+						"object-to-create": "HighSample",
+						"layer": "0",
+						"x": "SamplesSpawner.X",
+						"y": "SamplesSpawner.Y",
+						"create-hierarchy": false,
+						"template-name": "\"HighSample\""
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "HighSample",
+					"sid": 750454297490356,
+					"parameters": {
+						"angle": "90"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 986571751321641,
+					"parameters": {
+						"variable": "ContadorSpawn",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 923446270191260
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 735218842792931,
+					"parameters": {
+						"first-value": "ContadorSpawn",
+						"comparison": 5,
+						"second-value": "spawnRatio"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 485919668860664,
+					"parameters": {
+						"variable": "spawnLow"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 117428221030734,
+					"parameters": {
+						"variable": "topSpawnRatio",
+						"value": "(random(topSpawnRatio - 1, topSpawnRatio))"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 367803011586062,
+					"parameters": {
+						"object-to-create": "LowSample",
+						"layer": "0",
+						"x": "SamplesSpawner.X",
+						"y": "SamplesSpawner.Y",
+						"create-hierarchy": false,
+						"template-name": "\"LowSample\""
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "LowSample",
+					"sid": 325756546661910,
+					"parameters": {
+						"angle": "90"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 297988728503266,
+					"parameters": {
+						"variable": "ContadorSpawn",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 817496116790323
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 772073508028269
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 338821027665397,
+					"parameters": {
+						"variable": "ContadorSpawn",
+						"value": "0.05"
+					}
+				}
+			],
+			"sid": 579782899200974
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 444167507471624
+				}
+			],
+			"actions": [
+				{
+					"id": "move-forward",
+					"objectClass": "Wave",
+					"sid": 343041585091651,
+					"parameters": {
+						"distance": "sampleSpeed"
+					}
+				},
+				{
+					"id": "move-forward",
+					"objectClass": "HighSample",
+					"sid": 821142011533052,
+					"parameters": {
+						"distance": "sampleSpeed"
+					}
+				},
+				{
+					"id": "move-forward",
+					"objectClass": "LowSample",
+					"sid": 895339022042594,
+					"parameters": {
+						"distance": "sampleSpeed"
+					}
+				},
+				{
+					"id": "toggle-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 793678028323453,
+					"parameters": {
+						"variable": "spawnLow"
+					}
+				}
+			],
+			"sid": 613100776141047
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "HighSample",
+					"sid": 950997678057337,
+					"parameters": {
+						"object": "HealthChecker"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 860219932384303,
+					"parameters": {
+						"variable": "health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HealthText",
+					"sid": 695849318923976,
+					"parameters": {
+						"text": "\"Vidas: \" & health"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "HighSample",
+					"sid": 998589454629977
+				}
+			],
+			"sid": 929688696352212
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "LowSample",
+					"sid": 153425646676924,
+					"parameters": {
+						"object": "HealthChecker"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 824660296671450,
+					"parameters": {
+						"variable": "health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HealthText",
+					"sid": 146090813856017,
+					"parameters": {
+						"text": "\"Vidas: \" & health"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "LowSample",
+					"sid": 255052779270495
+				}
+			],
+			"sid": 221059898953185
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "HighSample",
+					"sid": 109904540712031,
+					"parameters": {
+						"object": "GraphLow"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 676106003054010,
+					"parameters": {
+						"variable": "health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HealthText",
+					"sid": 742586696290094,
+					"parameters": {
+						"text": "\"Vidas: \" & health"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "HighSample",
+					"sid": 772598931028568
+				}
+			],
+			"sid": 315931804880419
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "LowSample",
+					"sid": 905600452346596,
+					"parameters": {
+						"object": "GraphHigh"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 909275161291199,
+					"parameters": {
+						"variable": "health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HealthText",
+					"sid": 499606382797326,
+					"parameters": {
+						"text": "\"Vidas: \" & health"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "LowSample",
+					"sid": 804201496670218
+				}
+			],
+			"sid": 937471598375448
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 209366870609783,
+					"parameters": {
+						"variable": "puntos",
+						"comparison": 0,
+						"value": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 294672359231021,
+					"parameters": {
+						"variable": "sampleSpeed",
+						"value": "12"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 474758859112500,
+					"parameters": {
+						"variable": "topSpawnRatio",
+						"value": "20"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 157253960948869,
+					"parameters": {
+						"variable": "spawnRatio",
+						"value": "4"
+					}
+				}
+			],
+			"sid": 172594746192540
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 497081128326407,
+					"parameters": {
+						"variable": "puntos",
+						"comparison": 0,
+						"value": "20"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 318252628008482,
+					"parameters": {
+						"variable": "sampleSpeed",
+						"value": "15"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 151899233561639,
+					"parameters": {
+						"variable": "topSpawnRatio",
+						"value": "15"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 410532800813566,
+					"parameters": {
+						"variable": "spawnRatio",
+						"value": "3"
+					}
+				}
+			],
+			"sid": 338226033757377
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 538834690755321,
+					"parameters": {
+						"variable": "ContadorSpawn",
+						"comparison": 0,
+						"value": "30"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 302875441236129,
+					"parameters": {
+						"variable": "sampleSpeed",
+						"value": "18"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 622803790319492,
+					"parameters": {
+						"variable": "topSpawnRatio",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 969385619470086,
+					"parameters": {
+						"variable": "spawnRatio",
+						"value": "2"
+					}
+				}
+			],
+			"sid": 221617030642539
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Wave",
+					"sid": 678266266570640,
+					"parameters": {
+						"comparison": 5,
+						"y-co-ordinate": "870"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "Wave",
+					"sid": 536476634555486,
+					"parameters": {
+						"y": "-480"
+					}
+				}
+			],
+			"sid": 114099408905685
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 203454819590117,
+					"parameters": {
+						"first-value": "health",
+						"comparison": 2,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 773828147101082
+		}
+	],
+	"sid": 215299041633824
+}
