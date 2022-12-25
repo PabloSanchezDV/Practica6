@@ -1,0 +1,27 @@
+{
+	"name": "Hoja de eventos 3",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "TruePlayButton",
+					"sid": 718235339677858
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 479675928894619,
+					"parameters": {
+						"layout": "Escena 4"
+					}
+				}
+			],
+			"sid": 825745000726500
+		}
+	],
+	"sid": 405819252957136
+}

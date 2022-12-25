@@ -1,0 +1,74 @@
+{
+	"name": "Hoja de eventos 2",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 942223838921713
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText",
+					"sid": 809062501580791,
+					"parameters": {
+						"text": "\"Has hecho \" & puntos & \" puntos.\""
+					}
+				}
+			],
+			"sid": 989605927865823
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "TruePlayButton",
+					"sid": 324880619205655
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 743777262143929
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 100791307466424,
+					"parameters": {
+						"layout": "Escena 1"
+					}
+				}
+			],
+			"sid": 159752415809747
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 952778501281578
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "MBText",
+					"sid": 800613814178771,
+					"parameters": {
+						"text": "\"Utilizando el compresor CODEC: Gameplay has conseguido ahorrar \" & 1000*(puntos/50) & \" MB.\""
+					}
+				}
+			],
+			"sid": 632832551815906
+		}
+	],
+	"sid": 234144814665489
+}

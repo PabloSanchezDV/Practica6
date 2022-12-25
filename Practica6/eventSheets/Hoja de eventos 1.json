@@ -102,6 +102,19 @@
 					}
 				},
 				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 522654261142805,
+					"parameters": {
+						"object-to-create": "PartículasLow",
+						"layer": "0",
+						"x": "LowSample.X",
+						"y": "LowSample.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
 					"id": "destroy",
 					"objectClass": "LowSample",
 					"sid": 434622564395883
@@ -137,6 +150,19 @@
 					"sid": 793583618650028,
 					"parameters": {
 						"text": "\"Puntos: \" & puntos"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 577755873105965,
+					"parameters": {
+						"object-to-create": "PartículasHigh",
+						"layer": "0",
+						"x": "HighSample.X",
+						"y": "HighSample.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
 					}
 				},
 				{
@@ -663,7 +689,7 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 203454819590117,
+					"sid": 559982850809405,
 					"parameters": {
 						"first-value": "health",
 						"comparison": 2,
@@ -671,7 +697,16 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 117013355541097,
+					"parameters": {
+						"layout": "Escena 2"
+					}
+				}
+			],
 			"sid": 773828147101082
 		}
 	],
