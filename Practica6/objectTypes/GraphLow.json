@@ -1,0 +1,61 @@
+{
+	"name": "GraphLow",
+	"plugin-id": "Sprite",
+	"sid": 290351390573514,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1280,
+						"height": 720,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5310761,
+						"collisionPoly": {
+							"points": [
+								0.27578125,
+								0.39027788374159067,
+								0.4050000190734864,
+								0.6418055852254229,
+								0.5158594131469726,
+								0.7086806403266056,
+								0.6506640911102294,
+								0.7198958608839248,
+								0.7255664110183722,
+								0.733281257417467,
+								0.7873925805091864,
+								0.6588627682791818,
+								0.8376807034015659,
+								0.6660980105400086,
+								0.85546875,
+								0.5644444147745766,
+								0.85546875,
+								0.7430555555555556,
+								0.27578120231628417,
+								0.7430555555555556
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 413619457341324,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -5,10 +5,58 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Texto",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Partículas",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Arrastrar y soltar",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		}
+	],
 	"uniqueId": "ut4nw6xt60v",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"LowSample",
+			"PointsText",
+			"PartículasLow",
+			"HighSample",
+			"PartículasHigh",
+			"SamplesSpawner",
+			"HealthChecker",
+			"HealthText",
+			"GraphLow",
+			"GraphHigh",
+			"Wave",
+			"FrecuenciaHz",
+			"Texto",
+			"Presion"
+		],
 		"subfolders": []
 	},
 	"autosaveData": null,
