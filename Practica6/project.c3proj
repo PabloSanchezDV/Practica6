@@ -31,6 +31,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Botón",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "DragnDrop",
 			"name": "Arrastrar y soltar",
@@ -55,7 +63,15 @@
 			"Wave",
 			"FrecuenciaHz",
 			"Texto",
-			"Presion"
+			"Presion",
+			"FinPartida",
+			"ScoreText",
+			"TruePlayButton",
+			"MBText",
+			"CODEC",
+			"Gameplay",
+			"Compresores",
+			"Tutorial"
 		],
 		"subfolders": []
 	},
@@ -67,13 +83,19 @@
 	},
 	"layouts": {
 		"items": [
-			"Escena 1"
+			"Escena 1",
+			"Escena 2",
+			"Escena 3",
+			"Escena 4"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Hoja de eventos 1"
+			"Hoja de eventos 1",
+			"Hoja de eventos 2",
+			"Hoja de eventos 3",
+			"Hoja de eventos 4"
 		],
 		"subfolders": []
 	},
@@ -228,5 +250,5 @@
 	},
 	"viewportWidth": 854,
 	"viewportHeight": 480,
-	"firstLayout": null
+	"firstLayout": "Escena 3"
 }
